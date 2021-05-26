@@ -6,9 +6,9 @@ human-readable append-only file.
 ### Install
 
 ```bash
-    yarn add https://github.com/andyvanee/JsonDB.git
+    yarn add https://github.com/andyvanee/json-aof-db.git
     # or
-    npm install https://github.com/andyvanee/JsonDB.git
+    npm install https://github.com/andyvanee/json-aof-db.git
 ```
 
 ### Basic Usage
