@@ -26,7 +26,7 @@ class User extends JsonDB.Model {
     }
 
     beforeCreate() {
-        this.role = "anonymous"
+        this.role = this.role || "anonymous"
     }
 
     beforeSave() {
