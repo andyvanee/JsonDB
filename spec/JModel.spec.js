@@ -1,9 +1,9 @@
-import JsonDB from "../index.js"
+import JDB from "../index.js"
 import { assert } from "./spec-helpers.js"
 
-const db = new JsonDB.DB("spec/sample.jsondb").load()
+const db = new JDB.DB("spec/sample.jdb").load()
 
-class SampleModel extends JsonDB.Model {
+class SampleModel extends JDB.Model {
     static get db() {
         return db
     }
@@ -28,7 +28,7 @@ db.flush()
 assert(SampleModel.all.length == 0, "Start with no records")
 
 const one = SampleModel.create({ name: "one" })
-assert(one.name == "ne", "Property is assigned")
+assert(one.name == "one", "Property is assigned")
 assert(one.rowid == null, "No rowid yet")
 assert(SampleModel.all.length == 0, "Create does not save")
 assert(one.custom == "custom", "beforeCreate assigned property")

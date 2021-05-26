@@ -1,4 +1,4 @@
-# JSON DB
+# json-aof-db
 
 A simple no-dependency, disk-backed, in-memory data store using a
 human-readable append-only file.
@@ -14,13 +14,13 @@ human-readable append-only file.
 ### Basic Usage
 
 ```javascript
-import JsonDB from "jsondb"
+import JDB from "json-aof-db"
 
 // Database definition
-const userdb = new JsonDB.DB("users.jsondb").load()
+const userdb = new JDB.DB("users.jdb").load()
 
 // Model definition
-class User extends JsonDB.Model {
+class User extends JDB.Model {
     static get db() {
         return userdb
     }
@@ -30,7 +30,7 @@ class User extends JsonDB.Model {
     }
 
     beforeSave() {
-        // JsonDB.Model.uuid() is built-in to generate uuids similar to MongoDB
+        // JDB.Model.uuid() is built-in to generate uuids similar to MongoDB
         this.id = this.id || User.uuid()
     }
 }
