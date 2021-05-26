@@ -3,9 +3,19 @@
 A simple no-dependency, disk-backed, in-memory data store using a
 human-readable append-only file.
 
+### Install
+
+```bash
+    yarn add https://github.com/andyvanee/JsonDB.git
+    # or
+    npm install https://github.com/andyvanee/JsonDB.git
+```
+
 ### Basic Usage
 
 ```javascript
+import JsonDB from "jsondb"
+
 // Database definition
 const userdb = new JsonDB.DB("users.jsondb").load()
 

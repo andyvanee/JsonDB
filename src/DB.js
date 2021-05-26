@@ -16,6 +16,8 @@ export class DB {
         this.records = []
         const actions = DB.actions
         try {
+            if (!fs.existsSync(this.path)) this.flush()
+
             const data = fs
                 .readFileSync(this.path, { encoding: "utf8" })
                 .split(/\r?\n/)
