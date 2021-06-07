@@ -3,5 +3,11 @@
   "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "url": "git@github.com:andyvanee/json-aof-db.git"
+  }
 }
