@@ -65,8 +65,16 @@ export class DB {
     update(rowid, record, write = true) {
         const o = this.records[rowid] || {}
         const updated = Object.assign({}, o, record, { rowid })
+
+        const diff = {} // Store only changes
+        for (const [k, v] of Object.entries(updated)) {
+            if (JSON.stringify(o[k]) !== JSON.stringify(v)) diff[k] = v
+        }
+
         this.records[rowid] = updated
-        if (write) this.writeCmd("update", rowid, record)
+        if (write && JSON.stringify(diff) !== "{}") {
+            this.writeCmd("update", rowid, diff)
+        }
         return updated
     }
 

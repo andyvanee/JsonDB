@@ -53,3 +53,8 @@ User.filter(u => u.name == "One")
 ```
 
 See spec/\*.spec.js for complete examples.
+
+### TODO
+
+-   Dynamic mode to allow multiple write handles?
+-   Vaccuum to prune updates & deletes?

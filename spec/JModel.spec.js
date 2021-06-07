@@ -1,7 +1,8 @@
 import JDB from "../index.js"
 import { assert } from "./spec-helpers.js"
+const dbpath = "spec/jmodel.jdb"
 
-const db = new JDB.DB("spec/sample.jdb").load()
+const db = new JDB.DB(dbpath).load()
 
 class SampleModel extends JDB.Model {
     static get db() {
