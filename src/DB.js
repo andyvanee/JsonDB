@@ -14,6 +14,7 @@ export class DB {
 
     load() {
         this.records = []
+        this.nextId = 0
         const actions = DB.actions
         try {
             if (!fs.existsSync(this.path)) this.flush()
